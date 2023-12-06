@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://qn6xbk4fai4v"]
+
+[ext_resource type="Texture2D" uid="uid://bw7kbcggtkvoy" path="res://Assets/Background/background_ocean.jpg" id="1_cubav"]
+[ext_resource type="Script" path="res://Player.gd" id="1_mv3j7"]
+[ext_resource type="Texture2D" uid="uid://cyitdgn0nmaxm" path="res://Assets/PlayerModel/fish-44-1024x602.png" id="2_1scxg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_atxuy"]
+size = Vector2(72, 31)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="BackgroundOcean" type="Sprite2D" parent="."]
+position = Vector2(804, 389)
+scale = Vector2(0.549617, 0.549617)
+texture = ExtResource("1_cubav")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(591, 285)
+script = ExtResource("1_mv3j7")
+
+[node name="Fish-44-1024x602" type="Sprite2D" parent="CharacterBody2D"]
+position = Vector2(-2, 3)
+scale = Vector2(0.103821, 0.103821)
+texture = ExtResource("2_1scxg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(4, 1)
+shape = SubResource("RectangleShape2D_atxuy")
+one_way_collision_margin = 73.8
+debug_color = Color(1, 1, 1, 0.419608)
