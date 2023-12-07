@@ -7,6 +7,6 @@
 script = ExtResource("1_3mspo")
 
 [node name="Enemy1" type="Sprite2D" parent="."]
-position = Vector2(-84, -56)
-scale = Vector2(0.377248, 0.377248)
+position = Vector2(-34, -26)
+scale = Vector2(0.158667, 0.158667)
 texture = ExtResource("1_booqc")

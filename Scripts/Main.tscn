@@ -1,0 +1,58 @@
+[gd_scene load_steps=7 format=3 uid="uid://qn6xbk4fai4v"]
+
+[ext_resource type="Script" path="res://Scripts/Main_Spawner.gd" id="1_ygdqe"]
+[ext_resource type="Texture2D" uid="uid://jlo1mi56ctu8" path="res://Assets/Background/BackgroundHandDrawn1.jpg" id="2_qkpw0"]
+[ext_resource type="Script" path="res://Player.gd" id="3_66l3w"]
+[ext_resource type="Texture2D" uid="uid://dboattww43jqg" path="res://Assets/PlayerModel/Mchar1.png" id="4_w01wr"]
+[ext_resource type="PackedScene" uid="uid://dvyjno41ap4ev" path="res://SpawnLocation.tscn" id="5_865e6"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_oq85s"]
+radius = 64.4981
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_ygdqe")
+
+[node name="BackgroundHandDrawn1" type="Sprite2D" parent="."]
+position = Vector2(803.719, 446)
+scale = Vector2(0.709832, 0.709832)
+texture = ExtResource("2_qkpw0")
+
+[node name="SpawnTimer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[node name="Marker2D" type="Marker2D" parent="SpawnTimer" groups=["spawn"]]
+position = Vector2(-98, 550)
+
+[node name="Marker2D2" type="Marker2D" parent="SpawnTimer" groups=["spawn"]]
+position = Vector2(-85, 261)
+
+[node name="Marker2D3" type="Marker2D" parent="SpawnTimer" groups=["spawn"]]
+position = Vector2(-92, 805)
+
+[node name="Marker2D4" type="Marker2D" parent="SpawnTimer" groups=["spawn"]]
+position = Vector2(-86, 405)
+
+[node name="Marker2D5" type="Marker2D" parent="SpawnTimer" groups=["spawn"]]
+position = Vector2(-76, 106)
+
+[node name="Marker2D6" type="Marker2D" parent="SpawnTimer" groups=["spawn"]]
+position = Vector2(-97, 670)
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(591, 285)
+script = ExtResource("3_66l3w")
+
+[node name="Mchar1" type="Sprite2D" parent="CharacterBody2D"]
+position = Vector2(43, 2)
+scale = Vector2(0.216427, 0.216427)
+texture = ExtResource("4_w01wr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(1, 12)
+shape = SubResource("CircleShape2D_oq85s")
+
+[node name="Spawnlocation" parent="." instance=ExtResource("5_865e6")]
+position = Vector2(-52, 416)
+
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]

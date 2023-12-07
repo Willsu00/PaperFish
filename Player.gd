@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 var is_flipped = false
 
-func _process(delta):
+func _process(_delta):
 	# Get the mouse position
 	var target_position = get_global_mouse_position()
 
