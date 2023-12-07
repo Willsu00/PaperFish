@@ -2,6 +2,7 @@ extends Node2D
 
 
 var speed = 250
+var score = 120
 
 func _ready():
 	pass

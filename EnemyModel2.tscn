@@ -1,7 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://lidvieitjkxx"]
+[gd_scene load_steps=4 format=3 uid="uid://lidvieitjkxx"]
 
 [ext_resource type="Texture2D" uid="uid://d1chdv30r5ovd" path="res://Assets/PlayerModel/Enemy2.png" id="1_if254"]
 [ext_resource type="Script" path="res://EnemyModel2.gd" id="1_lx07l"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pg0u7"]
+radius = 49.0
+height = 144.0
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_lx07l")
@@ -10,3 +14,7 @@ script = ExtResource("1_lx07l")
 position = Vector2(-12, -4)
 scale = Vector2(0.102331, 0.102331)
 texture = ExtResource("1_if254")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_pg0u7")

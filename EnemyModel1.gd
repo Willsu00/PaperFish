@@ -1,6 +1,7 @@
-extends Node2D
+extends Area2D
 
-var speed = 200  # Adjust the speed of the object
+var speed = 200
+var score = 50  # Adjust the speed of the object
 
 func _ready():
 	pass

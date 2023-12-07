@@ -1,6 +1,9 @@
 extends CharacterBody2D
 
 var is_flipped = false
+var player_score = 0
+
+signal hit
 
 func _process(_delta):
 	# Get the mouse position
@@ -14,3 +17,4 @@ func _process(_delta):
 
 	# Set the object position to the mouse cursor position
 	position = target_position
+
