@@ -53,6 +53,32 @@ position = Vector2(1, 12)
 shape = SubResource("CircleShape2D_oq85s")
 
 [node name="Spawnlocation" parent="." instance=ExtResource("5_865e6")]
-position = Vector2(-52, 416)
+position = Vector2(-13, 401)
+
+[node name="SpawnTimer2" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[node name="Marker2D1" type="Marker2D" parent="SpawnTimer2" groups=["spawn_right"]]
+position = Vector2(1688, 574)
+
+[node name="Marker2D2" type="Marker2D" parent="SpawnTimer2" groups=["spawn_right"]]
+position = Vector2(1701, 285)
+
+[node name="Marker2D3" type="Marker2D" parent="SpawnTimer2" groups=["spawn_right"]]
+position = Vector2(1694, 829)
+
+[node name="Marker2D4" type="Marker2D" parent="SpawnTimer2" groups=["spawn_right"]]
+position = Vector2(1700, 429)
+
+[node name="Marker2D5" type="Marker2D" parent="SpawnTimer2" groups=["spawn_right"]]
+position = Vector2(1710, 130)
+
+[node name="Marker2D6" type="Marker2D" parent="SpawnTimer2" groups=["spawn_right"]]
+position = Vector2(1689, 694)
+
+[node name="SpawnlocationRight" parent="." instance=ExtResource("5_865e6")]
+position = Vector2(1613, 407)
 
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
+[connection signal="timeout" from="SpawnTimer2" to="." method="_on_spawn_timer_timeout_right"]

@@ -1,7 +1,7 @@
 extends Node2D
 
-var speed = 200
-var score = 50  # Adjust the speed of the object
+var speed = -150
+var score = 100  # Adjust the speed of the object
 
 func _ready():
 	pass
