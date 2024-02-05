@@ -1,7 +1,9 @@
-extends Node2D
+extends Area2D #EnemyModel1.tscn
 
 var speed = 200
-var score = 50  # Adjust the speed of the object
+var score = 50
+
+signal killed
 
 func _ready():
 	pass
@@ -11,3 +13,12 @@ func _process(delta):
 
 func _on_timer_timeout():
 	queue_free()
+
+
+func _on_body_entered(body):
+	if body.is_in_group("Player"):
+		self.queue_free()
+		globals.player_score += globals.enemy_common
+		print(globals.player_score)
+		
+

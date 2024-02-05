@@ -4,21 +4,14 @@ extends Node2D
 
 var enemies = [
 	preload("res://EnemyModel1.tscn"),
-	preload("res://EnemyModel1.tscn"),
-	preload("res://EnemyModel1.tscn"),
-	preload("res://EnemyModel1.tscn"),
-	preload("res://EnemyModel2.tscn"),
-	preload("res://EnemyModel3.tscn")
+	
 ]
 
 var enemies_right = [
 	preload("res://EnemyModel1R.tscn"),
-	preload("res://EnemyModel1R.tscn"),
-	preload("res://EnemyModel1R.tscn"),
-	preload("res://EnemyModel1R.tscn"),
-	preload("res://EnemyModel2R.tscn"),
-	preload("res://EnemyModel3R.tscn")
+
 ]
+
 
 func _ready():
 	pass
@@ -48,7 +41,7 @@ func _on_spawn_timer_timeout_right():
 	var enemy_instance_right = enemies_right[enemy_spawn_right].instantiate()
 	enemy_instance_right.position = $SpawnlocationRight.position
 	add_child(enemy_instance_right)
-
+	
 	var nodes = get_tree().get_nodes_in_group("spawn_right")
 	var spawn_node_right = nodes[randi() % nodes.size()]
 	var spawn_position_right = spawn_node_right.position
@@ -67,3 +60,4 @@ func _on_timer_timeout():
 	var enemy = get_parent()
 	enemy.queue_free()
 	
+

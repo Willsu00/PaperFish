@@ -3,8 +3,6 @@ extends CharacterBody2D
 var is_flipped = false
 var player_score = 0
 
-signal hit
-
 func _process(_delta):
 	# Get the mouse position
 	var target_position = get_global_mouse_position()

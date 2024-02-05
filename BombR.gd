@@ -1,12 +1,11 @@
 extends Area2D
 
-var speed = 150
-var score = 100
-var hp = 1000
+var speed = -150
 
 func _ready():
 	pass
 
+# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	global_position.x += speed * delta
 
@@ -16,4 +15,4 @@ func _on_timer_timeout():
 
 func _on_body_entered(body):
 	if body.is_in_group("Player"):
-		self.queue_free()
+		body.queue_free()

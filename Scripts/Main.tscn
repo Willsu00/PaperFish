@@ -18,7 +18,7 @@ scale = Vector2(0.709832, 0.709832)
 texture = ExtResource("2_qkpw0")
 
 [node name="SpawnTimer" type="Timer" parent="."]
-wait_time = 5.0
+wait_time = 2.0
 autostart = true
 
 [node name="Marker2D" type="Marker2D" parent="SpawnTimer" groups=["spawn"]]
@@ -39,7 +39,7 @@ position = Vector2(-76, 106)
 [node name="Marker2D6" type="Marker2D" parent="SpawnTimer" groups=["spawn"]]
 position = Vector2(-97, 670)
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." groups=["Player"]]
 position = Vector2(591, 285)
 script = ExtResource("3_66l3w")
 
@@ -53,10 +53,10 @@ position = Vector2(1, 12)
 shape = SubResource("CircleShape2D_oq85s")
 
 [node name="Spawnlocation" parent="." instance=ExtResource("5_865e6")]
-position = Vector2(-13, 401)
+position = Vector2(-19, 404)
 
 [node name="SpawnTimer2" type="Timer" parent="."]
-wait_time = 5.0
+wait_time = 2.0
 autostart = true
 
 [node name="Marker2D1" type="Marker2D" parent="SpawnTimer2" groups=["spawn_right"]]
