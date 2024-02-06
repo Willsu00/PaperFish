@@ -1,0 +1,46 @@
+[gd_scene load_steps=4 format=3 uid="uid://c3sl6cdmo4ytr"]
+
+[ext_resource type="Script" path="res://HowToPlayControls.gd" id="1_2r7fb"]
+[ext_resource type="Texture2D" uid="uid://mmh0fjd7gecu" path="res://Assets/MenuAssets/How_To_Play_Controls.jpg" id="1_uvf78"]
+[ext_resource type="FontFile" uid="uid://dkvio1tl7us7" path="res://Assets/MenuAssets/Crayonara-Regular.ttf" id="3_lxge4"]
+
+[node name="HTPControls" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 558.0
+offset_top = 365.0
+offset_right = -433.0
+offset_bottom = -59.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2r7fb")
+
+[node name="HowToPlayControls" type="Sprite2D" parent="."]
+position = Vector2(241.333, 84)
+scale = Vector2(0.838889, 0.838889)
+texture = ExtResource("1_uvf78")
+
+[node name="ToNextHTP" type="Button" parent="."]
+layout_mode = 2
+offset_left = 783.0
+offset_top = 405.0
+offset_right = 956.0
+offset_bottom = 456.0
+theme_override_fonts/font = ExtResource("3_lxge4")
+theme_override_font_sizes/font_size = 35
+text = "Next"
+
+[node name="ToMenu" type="Button" parent="."]
+layout_mode = 2
+offset_left = 122.0
+offset_top = 405.0
+offset_right = 295.0
+offset_bottom = 456.0
+theme_override_fonts/font = ExtResource("3_lxge4")
+theme_override_font_sizes/font_size = 35
+text = "Main Menu"
+
+[connection signal="pressed" from="ToNextHTP" to="." method="_on_to_next_htp_pressed"]
+[connection signal="pressed" from="ToMenu" to="." method="_on_to_menu_pressed"]

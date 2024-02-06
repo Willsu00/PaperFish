@@ -18,11 +18,12 @@ grow_vertical = 2
 script = ExtResource("1_yrkqm")
 
 [node name="HowToPlay2" type="Sprite2D" parent="."]
-position = Vector2(242.333, 86)
+position = Vector2(241.333, 84)
 scale = Vector2(0.838889, 0.838889)
 texture = ExtResource("2_4nt7s")
 
 [node name="ToMenu" type="Button" parent="."]
+layout_mode = 0
 offset_left = 122.0
 offset_top = 405.0
 offset_right = 295.0
@@ -32,10 +33,11 @@ theme_override_font_sizes/font_size = 35
 text = "Main Menu"
 
 [node name="Back" type="Button" parent="."]
+layout_mode = 0
 offset_left = -465.0
-offset_top = 405.0
+offset_top = 401.0
 offset_right = -292.0
-offset_bottom = 456.0
+offset_bottom = 452.0
 theme_override_fonts/font = ExtResource("3_jc12g")
 theme_override_font_sizes/font_size = 35
 text = "Back"

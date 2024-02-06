@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://qn6xbk4fai4v"]
+[gd_scene load_steps=9 format=3 uid="uid://qn6xbk4fai4v"]
 
 [ext_resource type="Script" path="res://Scripts/Main_Spawner.gd" id="1_ygdqe"]
 [ext_resource type="Texture2D" uid="uid://jlo1mi56ctu8" path="res://Assets/Background/BackgroundHandDrawn1.jpg" id="2_qkpw0"]
@@ -9,9 +9,6 @@
 [ext_resource type="FontFile" uid="uid://dkvio1tl7us7" path="res://Assets/MenuAssets/Crayonara-Regular.ttf" id="7_fl5yp"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fn3kx"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_yjkyv"]
-size = Vector2(1617, 38)
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_ygdqe")
@@ -105,12 +102,6 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("7_fl5yp")
 theme_override_font_sizes/font_size = 65
 text = "Score:"
-
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(798.5, 9)
-shape = SubResource("RectangleShape2D_yjkyv")
 
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
 [connection signal="timeout" from="SpawnTimer2" to="." method="_on_spawn_timer_timeout_right"]
