@@ -1,10 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://qn6xbk4fai4v"]
+[gd_scene load_steps=9 format=3 uid="uid://qn6xbk4fai4v"]
 
 [ext_resource type="Script" path="res://Scripts/Main_Spawner.gd" id="1_ygdqe"]
 [ext_resource type="Texture2D" uid="uid://jlo1mi56ctu8" path="res://Assets/Background/BackgroundHandDrawn1.jpg" id="2_qkpw0"]
 [ext_resource type="Script" path="res://Player.gd" id="3_66l3w"]
 [ext_resource type="Texture2D" uid="uid://dboattww43jqg" path="res://Assets/PlayerModel/Mchar1.png" id="4_w01wr"]
 [ext_resource type="PackedScene" uid="uid://dvyjno41ap4ev" path="res://SpawnLocation.tscn" id="5_865e6"]
+[ext_resource type="Script" path="res://Scripts/GameUI.gd" id="6_6vtku"]
+[ext_resource type="FontFile" uid="uid://dkvio1tl7us7" path="res://Assets/MenuAssets/Crayonara-Regular.ttf" id="7_fl5yp"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_oq85s"]
 radius = 64.4981
@@ -18,7 +20,7 @@ scale = Vector2(0.709832, 0.709832)
 texture = ExtResource("2_qkpw0")
 
 [node name="SpawnTimer" type="Timer" parent="."]
-wait_time = 2.0
+wait_time = 3.0
 autostart = true
 
 [node name="Marker2D" type="Marker2D" parent="SpawnTimer" groups=["spawn"]]
@@ -56,7 +58,7 @@ shape = SubResource("CircleShape2D_oq85s")
 position = Vector2(-19, 404)
 
 [node name="SpawnTimer2" type="Timer" parent="."]
-wait_time = 2.0
+wait_time = 5.0
 autostart = true
 
 [node name="Marker2D1" type="Marker2D" parent="SpawnTimer2" groups=["spawn_right"]]
@@ -79,6 +81,26 @@ position = Vector2(1689, 694)
 
 [node name="SpawnlocationRight" parent="." instance=ExtResource("5_865e6")]
 position = Vector2(1613, 407)
+
+[node name="UI" type="CanvasGroup" parent="."]
+
+[node name="GameUI" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 453.0
+offset_bottom = 129.0
+script = ExtResource("6_6vtku")
+
+[node name="Score" type="Label" parent="UI/GameUI"]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 23.0
+offset_right = 163.0
+offset_bottom = 90.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_fl5yp")
+theme_override_font_sizes/font_size = 65
+text = "Score:"
 
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
 [connection signal="timeout" from="SpawnTimer2" to="." method="_on_spawn_timer_timeout_right"]

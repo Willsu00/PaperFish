@@ -1,6 +1,6 @@
 extends Area2D
 
-var speed = 150
+var speed = 100
 signal killed
 
 func _ready():

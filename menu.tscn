@@ -1,0 +1,46 @@
+[gd_scene load_steps=4 format=3 uid="uid://bfn4qqao7idch"]
+
+[ext_resource type="Script" path="res://Menu.gd" id="1_kr73w"]
+[ext_resource type="Texture2D" uid="uid://cqbnqkuineq5m" path="res://Assets/MenuAssets/Main_Menu_True.PNG" id="2_meawo"]
+[ext_resource type="FontFile" uid="uid://dkvio1tl7us7" path="res://Assets/MenuAssets/Crayonara-Regular.ttf" id="3_f8s7c"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 558.0
+offset_top = 365.0
+offset_right = -433.0
+offset_bottom = -59.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_kr73w")
+
+[node name="MainMenuTrue" type="Sprite2D" parent="."]
+position = Vector2(238, 88)
+scale = Vector2(0.846296, 0.846296)
+texture = ExtResource("2_meawo")
+
+[node name="Play" type="Button" parent="."]
+layout_mode = 2
+offset_left = 18.0
+offset_top = 183.0
+offset_right = 378.0
+offset_bottom = 312.0
+theme_override_fonts/font = ExtResource("3_f8s7c")
+theme_override_font_sizes/font_size = 100
+text = "Play"
+
+[node name="How to Play" type="Button" parent="."]
+layout_mode = 2
+offset_left = 19.0
+offset_top = 318.0
+offset_right = 378.0
+offset_bottom = 437.0
+theme_override_fonts/font = ExtResource("3_f8s7c")
+theme_override_font_sizes/font_size = 50
+text = "How To Play"
+
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="How to Play" to="." method="_on_how_to_play_pressed"]

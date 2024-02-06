@@ -1,9 +1,6 @@
 extends Area2D #EnemyModel1.tscn
 
 var speed = 200
-var score = 50
-
-signal killed
 
 func _ready():
 	pass

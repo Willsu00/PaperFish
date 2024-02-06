@@ -3,18 +3,30 @@
 extends Node2D
 
 var enemies = [
+	preload("res://EnemyModel1.tscn"), #Common Enemy x3 Rate
 	preload("res://EnemyModel1.tscn"),
+	preload("res://EnemyModel1.tscn"),
+	preload("res://EnemyModel2.tscn"), #Uncommon Enemy x2 Rate
+	preload("res://EnemyModel2.tscn"),
+	preload("res://EnemyModel3.tscn"), #Rare Enemy x1 Rate
+	preload("res://Bomb.tscn")         #Hazards x1 Rate
 	
 ]
 
 var enemies_right = [
 	preload("res://EnemyModel1R.tscn"),
+	preload("res://EnemyModel1R.tscn"),
+	preload("res://EnemyModel1R.tscn"),
+	preload("res://EnemyModel2R.tscn"),
+	preload("res://EnemyModel3R.tscn"),
+	preload("res://BombR.tscn")
 
 ]
 
 
 func _ready():
 	pass
+	
 
 func _on_spawn_timer_timeout():
 	var enemy_spawn = randi_range(0, enemies.size() - 1)
@@ -28,8 +40,9 @@ func _on_spawn_timer_timeout():
 	$Spawnlocation.position = spawn_position
 	
 	var timer = Timer.new()
-	timer.wait_time = 30.0
+	timer.wait_time = 30
 	timer.one_shot = true
+	print(timer.wait_time)
 	
 	var callable = Callable(enemy_instance, "_on_timer_timeout")
 	timer.timeout.connect(callable)
@@ -48,8 +61,9 @@ func _on_spawn_timer_timeout_right():
 	$SpawnlocationRight.position = spawn_position_right
 	
 	var timer_right = Timer.new()
-	timer_right.wait_time = 30.0
+	timer_right.wait_time = 30
 	timer_right.one_shot = true
+	print(timer_right.wait_time)
 	
 	var callable = Callable(enemy_instance_right, "_on_timer_timeout")
 	timer_right.timeout.connect(callable)

@@ -1,8 +1,7 @@
-extends Node2D
+extends Area2D
 
 
-var speed = 250
-var score = 120
+var speed = 350
 
 func _ready():
 	pass
@@ -13,3 +12,13 @@ func _process(delta):
 
 func _on_timer_timeout():
 	queue_free()
+
+
+func _on_body_entered(body):
+	if body.is_in_group("Player"):
+		if globals.player_score >= 2500:
+			self.queue_free()
+			globals.player_score += globals.enemy_rare
+			print(globals.player_score)
+		else:
+			body.queue_free()
