@@ -24,3 +24,9 @@ globals="*res://Scripts/globals.gd"
 window/size/viewport_width=1600
 window/size/viewport_height=900
 window/stretch/mode="viewport"
+
+[layer_names]
+
+2d_physics/layer_1="Player"
+2d_physics/layer_2="Walls"
+2d_physics/layer_3="Enemy"

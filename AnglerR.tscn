@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://cwbdfjt5hgj6q"]
+
+[ext_resource type="Script" path="res://AnglerR.gd" id="1_kwi60"]
+[ext_resource type="Texture2D" uid="uid://6pwe6v2asc3u" path="res://Assets/PlayerModel/IMG_0027.PNG" id="2_3mpi4"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4jnoo"]
+
+[node name="Area2D" type="Area2D"]
+script = ExtResource("1_kwi60")
+
+[node name="Img0027" type="Sprite2D" parent="."]
+position = Vector2(18, -1)
+scale = Vector2(0.127, 0.127)
+texture = ExtResource("2_3mpi4")
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(12, 15)
+rotation = 1.5708
+scale = Vector2(7, 7)
+shape = SubResource("CapsuleShape2D_4jnoo")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,7 +1,6 @@
-extends Area2D
+extends Area2D #DoodleShark.tscn
 
-
-var speed = 350
+var speed = -200
 
 func _ready():
 	pass
@@ -16,10 +15,5 @@ func _on_timer_timeout():
 
 func _on_body_entered(body):
 	if body.is_in_group("Player"):
-		if globals.player_score >= 2500:
-			self.queue_free()
-			globals.player_score += globals.enemy_rare
-			print(globals.player_score)
-		else:
-			body.queue_free()
-			get_tree().change_scene_to_file("res://GameOver.tscn")
+		body.queue_free()
+		get_tree().change_scene_to_file("res://GameOver.tscn")

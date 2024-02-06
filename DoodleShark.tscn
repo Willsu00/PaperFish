@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://4unq5i4mjbe2"]
+
+[ext_resource type="Texture2D" uid="uid://dhqj74grjl48v" path="res://Assets/PlayerModel/IMG_0029.PNG" id="1_hc2ao"]
+[ext_resource type="Script" path="res://DoodleShark.gd" id="1_mi28h"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_c338s"]
+
+[node name="Area2D" type="Area2D"]
+script = ExtResource("1_mi28h")
+
+[node name="Img0029" type="Sprite2D" parent="."]
+position = Vector2(0.999998, 2)
+scale = Vector2(0.178357, 0.178357)
+texture = ExtResource("1_hc2ao")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(21, 13)
+rotation = 1.5708
+scale = Vector2(11, 11)
+shape = SubResource("CapsuleShape2D_c338s")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

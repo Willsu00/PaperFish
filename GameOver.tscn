@@ -1,0 +1,54 @@
+[gd_scene load_steps=4 format=3 uid="uid://bu58p2tebkb3t"]
+
+[ext_resource type="Texture2D" uid="uid://d0y85n04utb5m" path="res://Assets/MenuAssets/Game_Over.PNG" id="1_3kk2m"]
+[ext_resource type="Script" path="res://GameOver.gd" id="1_ox582"]
+[ext_resource type="FontFile" uid="uid://dkvio1tl7us7" path="res://Assets/MenuAssets/Crayonara-Regular.ttf" id="2_rfrj0"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ox582")
+
+[node name="GameOver" type="Sprite2D" parent="."]
+position = Vector2(800, 448.5)
+scale = Vector2(0.841667, 0.841667)
+texture = ExtResource("1_3kk2m")
+
+[node name="Score" type="Label" parent="."]
+layout_mode = 0
+offset_left = 646.0
+offset_top = 437.0
+offset_right = 1004.0
+offset_bottom = 624.0
+theme_override_colors/font_color = Color(0.2, 0.2, 0.2, 1)
+theme_override_fonts/font = ExtResource("2_rfrj0")
+theme_override_font_sizes/font_size = 100
+text = "Score:"
+horizontal_alignment = 1
+
+[node name="PlayAgain" type="Button" parent="."]
+layout_mode = 0
+offset_left = 710.0
+offset_top = 709.0
+offset_right = 925.0
+offset_bottom = 778.0
+theme_override_fonts/font = ExtResource("2_rfrj0")
+theme_override_font_sizes/font_size = 50
+text = "Play Again"
+
+[node name="MainMenu" type="Button" parent="."]
+layout_mode = 0
+offset_left = 710.0
+offset_top = 808.0
+offset_right = 925.0
+offset_bottom = 882.0
+theme_override_fonts/font = ExtResource("2_rfrj0")
+theme_override_font_sizes/font_size = 50
+text = "Main Menu"
+
+[connection signal="pressed" from="PlayAgain" to="." method="_on_play_again_pressed"]
+[connection signal="pressed" from="MainMenu" to="." method="_on_main_menu_pressed"]

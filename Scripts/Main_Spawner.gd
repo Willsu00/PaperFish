@@ -3,13 +3,18 @@
 extends Node2D
 
 var enemies = [
-	preload("res://EnemyModel1.tscn"), #Common Enemy x3 Rate
+	preload("res://EnemyModel1.tscn"), #Common Enemy x6 Rate
+	preload("res://EnemyModel1.tscn"),
+	preload("res://EnemyModel1.tscn"),
+	preload("res://EnemyModel1.tscn"),
 	preload("res://EnemyModel1.tscn"),
 	preload("res://EnemyModel1.tscn"),
 	preload("res://EnemyModel2.tscn"), #Uncommon Enemy x2 Rate
 	preload("res://EnemyModel2.tscn"),
 	preload("res://EnemyModel3.tscn"), #Rare Enemy x1 Rate
-	preload("res://Bomb.tscn")         #Hazards x1 Rate
+	preload("res://Bomb.tscn"),         #Hazards x1 Rate
+	preload("res://Angler.tscn"),
+	preload("res://DoodleShark.tscn")
 	
 ]
 
@@ -17,9 +22,15 @@ var enemies_right = [
 	preload("res://EnemyModel1R.tscn"),
 	preload("res://EnemyModel1R.tscn"),
 	preload("res://EnemyModel1R.tscn"),
+	preload("res://EnemyModel1R.tscn"),
+	preload("res://EnemyModel1R.tscn"),
+	preload("res://EnemyModel1R.tscn"),
+	preload("res://EnemyModel2R.tscn"),
 	preload("res://EnemyModel2R.tscn"),
 	preload("res://EnemyModel3R.tscn"),
-	preload("res://BombR.tscn")
+	preload("res://BombR.tscn"),
+	preload("res://AnglerR.tscn"),
+	preload("res://DoodleSharkR.tscn")
 
 ]
 

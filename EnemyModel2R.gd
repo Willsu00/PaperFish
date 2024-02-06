@@ -20,3 +20,4 @@ func _on_body_entered(body):
 			print(globals.player_score)
 		else:
 			body.queue_free()
+			get_tree().change_scene_to_file("res://GameOver.tscn")

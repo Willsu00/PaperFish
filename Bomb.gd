@@ -1,7 +1,6 @@
 extends Area2D
 
 var speed = 100
-signal killed
 
 func _ready():
 	pass
@@ -16,5 +15,5 @@ func _on_timer_timeout():
 
 func _on_body_entered(body):
 	if body.is_in_group("Player"):
-		emit_signal("killed")
 		body.queue_free()
+		get_tree().change_scene_to_file("res://GameOver.tscn")

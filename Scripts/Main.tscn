@@ -1,15 +1,17 @@
-[gd_scene load_steps=9 format=3 uid="uid://qn6xbk4fai4v"]
+[gd_scene load_steps=10 format=3 uid="uid://qn6xbk4fai4v"]
 
 [ext_resource type="Script" path="res://Scripts/Main_Spawner.gd" id="1_ygdqe"]
 [ext_resource type="Texture2D" uid="uid://jlo1mi56ctu8" path="res://Assets/Background/BackgroundHandDrawn1.jpg" id="2_qkpw0"]
 [ext_resource type="Script" path="res://Player.gd" id="3_66l3w"]
-[ext_resource type="Texture2D" uid="uid://dboattww43jqg" path="res://Assets/PlayerModel/Mchar1.png" id="4_w01wr"]
+[ext_resource type="Texture2D" uid="uid://cen3xrvro7uwn" path="res://Assets/PlayerModel/IMG_0028.PNG" id="4_mqly3"]
 [ext_resource type="PackedScene" uid="uid://dvyjno41ap4ev" path="res://SpawnLocation.tscn" id="5_865e6"]
 [ext_resource type="Script" path="res://Scripts/GameUI.gd" id="6_6vtku"]
 [ext_resource type="FontFile" uid="uid://dkvio1tl7us7" path="res://Assets/MenuAssets/Crayonara-Regular.ttf" id="7_fl5yp"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_oq85s"]
-radius = 64.4981
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fn3kx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yjkyv"]
+size = Vector2(1617, 38)
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_ygdqe")
@@ -20,7 +22,7 @@ scale = Vector2(0.709832, 0.709832)
 texture = ExtResource("2_qkpw0")
 
 [node name="SpawnTimer" type="Timer" parent="."]
-wait_time = 3.0
+wait_time = 2.75
 autostart = true
 
 [node name="Marker2D" type="Marker2D" parent="SpawnTimer" groups=["spawn"]]
@@ -45,20 +47,22 @@ position = Vector2(-97, 670)
 position = Vector2(591, 285)
 script = ExtResource("3_66l3w")
 
-[node name="Mchar1" type="Sprite2D" parent="CharacterBody2D"]
-position = Vector2(43, 2)
-scale = Vector2(0.216427, 0.216427)
-texture = ExtResource("4_w01wr")
+[node name="Img0028" type="Sprite2D" parent="CharacterBody2D"]
+position = Vector2(-7, 20)
+scale = Vector2(0.105366, 0.105366)
+texture = ExtResource("4_mqly3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 position = Vector2(1, 12)
-shape = SubResource("CircleShape2D_oq85s")
+rotation = 1.5708
+scale = Vector2(5, 5)
+shape = SubResource("CapsuleShape2D_fn3kx")
 
 [node name="Spawnlocation" parent="." instance=ExtResource("5_865e6")]
 position = Vector2(-19, 404)
 
 [node name="SpawnTimer2" type="Timer" parent="."]
-wait_time = 5.0
+wait_time = 2.5
 autostart = true
 
 [node name="Marker2D1" type="Marker2D" parent="SpawnTimer2" groups=["spawn_right"]]
@@ -101,6 +105,12 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("7_fl5yp")
 theme_override_font_sizes/font_size = 65
 text = "Score:"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(798.5, 9)
+shape = SubResource("RectangleShape2D_yjkyv")
 
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
 [connection signal="timeout" from="SpawnTimer2" to="." method="_on_spawn_timer_timeout_right"]

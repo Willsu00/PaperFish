@@ -8,5 +8,9 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	scoreLabel.text = "Score: %d" % globals.player_score
+	if globals.player_score == 1000:
+		$Score.set("theme_override_colors/font_color", Color(0, 0, 205))
+	elif globals.player_score >=2500:
+		$Score.set("theme_override_colors/font_color", Color(0, 153, 0))
