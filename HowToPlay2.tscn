@@ -42,5 +42,7 @@ theme_override_fonts/font = ExtResource("3_jc12g")
 theme_override_font_sizes/font_size = 35
 text = "Back"
 
+[connection signal="mouse_entered" from="ToMenu" to="." method="_on_to_menu_mouse_entered"]
 [connection signal="pressed" from="ToMenu" to="." method="_on_to_menu_pressed"]
+[connection signal="mouse_entered" from="Back" to="." method="_on_back_mouse_entered"]
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]

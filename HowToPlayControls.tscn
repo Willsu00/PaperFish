@@ -42,5 +42,7 @@ theme_override_fonts/font = ExtResource("3_lxge4")
 theme_override_font_sizes/font_size = 35
 text = "Main Menu"
 
+[connection signal="mouse_entered" from="ToNextHTP" to="." method="_on_to_next_htp_mouse_entered"]
 [connection signal="pressed" from="ToNextHTP" to="." method="_on_to_next_htp_pressed"]
+[connection signal="mouse_entered" from="ToMenu" to="." method="_on_to_menu_mouse_entered"]
 [connection signal="pressed" from="ToMenu" to="." method="_on_to_menu_pressed"]

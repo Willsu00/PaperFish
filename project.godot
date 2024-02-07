@@ -15,9 +15,17 @@ run/main_scene="res://menu.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
 config/icon="res://icon.svg"
 
+[audio]
+
+driver/mix_rate=48000
+
 [autoload]
 
 globals="*res://Scripts/globals.gd"
+Bgm="*res://bgm.tscn"
+ButtonPressedSound="*res://button_pressed_sound.tscn"
+ButtonHoverSound="*res://button_hover_sound.tscn"
+EatSFX="*res://EatSFX.tscn"
 
 [display]
 

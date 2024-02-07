@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://crvqonrmljgsi"]
+
+[ext_resource type="AudioStream" uid="uid://cubxir2dc2f38" path="res://Assets/Sound/Pop_Sound_Eat.mp3" id="1_ce7s0"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+stream = ExtResource("1_ce7s0")
+volume_db = -23.0

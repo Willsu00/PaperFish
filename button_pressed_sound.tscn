@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://b48wqxtogolsx"]
+
+[ext_resource type="AudioStream" uid="uid://d3oxo4uvd1hha" path="res://Assets/Sound/Paper_Crunch_SFX_Button_Pressed.wav" id="1_dw6wd"]
+
+[node name="ButtonPressedSound" type="AudioStreamPlayer"]
+stream = ExtResource("1_dw6wd")
+volume_db = 5.0

@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://du31yk8tkhrjg"]
+
+[ext_resource type="AudioStream" uid="uid://ci202cghlacxn" path="res://Assets/Sound/Paper_Crunch_SFX_Button_Hover.wav" id="1_f1gn7"]
+
+[node name="ButtonHoverSound" type="AudioStreamPlayer"]
+stream = ExtResource("1_f1gn7")
+volume_db = 5.0

@@ -15,7 +15,17 @@ func _process(_delta):
 func _on_play_again_pressed():
 	get_tree().change_scene_to_file("res://Scripts/Main.tscn")
 	globals.player_score -= globals.player_score
+	ButtonPressedSound.play()
 
 
 func _on_main_menu_pressed():
 	get_tree().change_scene_to_file("res://menu.tscn")
+	ButtonPressedSound.play()
+
+
+func _on_play_again_mouse_entered():
+	ButtonHoverSound.play()
+
+
+func _on_main_menu_mouse_entered():
+	ButtonHoverSound.play()

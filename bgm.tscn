@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://3toa3jlm8qk0"]
+
+[ext_resource type="AudioStream" uid="uid://dqcsh385xqica" path="res://Assets/Sound/Beach_OST_Looped.wav" id="1_vlptv"]
+
+[node name="BGM" type="AudioStreamPlayer"]
+stream = ExtResource("1_vlptv")
+volume_db = -6.0
+autoplay = true

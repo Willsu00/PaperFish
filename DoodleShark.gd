@@ -1,6 +1,6 @@
 extends Area2D #DoodleShark.tscn
 
-var speed = 200
+var speed = 300
 
 func _ready():
 	pass

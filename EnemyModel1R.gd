@@ -22,3 +22,4 @@ func _on_body_entered(body):
 		self.queue_free()
 		globals.player_score += globals.enemy_common
 		print(globals.player_score)
+		EatSFX.play()
