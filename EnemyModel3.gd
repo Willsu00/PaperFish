@@ -20,6 +20,7 @@ func _on_body_entered(body):
 			self.queue_free()
 			globals.player_score += globals.enemy_rare
 			print(globals.player_score)
+			EatSFX.play()
 		else:
 			body.queue_free()
 			get_tree().change_scene_to_file("res://GameOver.tscn")
