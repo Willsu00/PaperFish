@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://qn6xbk4fai4v"]
+[gd_scene load_steps=10 format=3 uid="uid://qn6xbk4fai4v"]
 
 [ext_resource type="Script" path="res://Scripts/Main_Spawner.gd" id="1_ygdqe"]
 [ext_resource type="Texture2D" uid="uid://jlo1mi56ctu8" path="res://Assets/Background/BackgroundHandDrawn1.jpg" id="2_qkpw0"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dvyjno41ap4ev" path="res://SpawnLocation.tscn" id="5_865e6"]
 [ext_resource type="Script" path="res://Scripts/GameUI.gd" id="6_6vtku"]
 [ext_resource type="FontFile" uid="uid://dkvio1tl7us7" path="res://Assets/MenuAssets/Crayonara-Regular.ttf" id="7_fl5yp"]
+[ext_resource type="PackedScene" uid="uid://yxcvsv5vyiua" path="res://Evolution_Indicator.tscn" id="8_8iqmo"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fn3kx"]
 
@@ -102,6 +103,9 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("7_fl5yp")
 theme_override_font_sizes/font_size = 65
 text = "Score:"
+
+[node name="EvolutionIndicator" parent="." instance=ExtResource("8_8iqmo")]
+position = Vector2(1093, 17)
 
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
 [connection signal="timeout" from="SpawnTimer2" to="." method="_on_spawn_timer_timeout_right"]

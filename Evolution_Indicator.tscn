@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://yxcvsv5vyiua"]
+
+[ext_resource type="Texture2D" uid="uid://cxsxnd1rotgy6" path="res://Assets/MenuAssets/UI_Fish1.png" id="1_lh0em"]
+[ext_resource type="Texture2D" uid="uid://cmj2a3bej003a" path="res://Assets/MenuAssets/UI_Fish2.png" id="2_7ypyp"]
+[ext_resource type="Script" path="res://UiFish2.gd" id="3_5tg8y"]
+[ext_resource type="Texture2D" uid="uid://bap6tkcipface" path="res://Assets/MenuAssets/UI_Fish3.png" id="4_jjhpa"]
+[ext_resource type="Script" path="res://UiFish3.gd" id="5_mrhj8"]
+
+[node name="EvolutionIndicator" type="Node2D"]
+
+[node name="UiFish1" type="Sprite2D" parent="."]
+position = Vector2(164, 54)
+scale = Vector2(0.0816831, 0.0816831)
+texture = ExtResource("1_lh0em")
+
+[node name="UiFish2" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(279, 51)
+scale = Vector2(0.0625, 0.0625)
+texture = ExtResource("2_7ypyp")
+script = ExtResource("3_5tg8y")
+
+[node name="UiFish3" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(424, 56)
+scale = Vector2(0.0622002, 0.0622002)
+texture = ExtResource("4_jjhpa")
+script = ExtResource("5_mrhj8")
